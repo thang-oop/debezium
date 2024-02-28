@@ -1,25 +1,34 @@
 package com.win.cdc.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity
-//@Getter
-//@Setter
-//@Table(name = "customer")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Customer {
-//    @Id
-//    @Column(name = "id", nullable = false)
-    private Long id;
-
-//    @Column(name = "fullname", nullable = false)
-    private String fullname;
-
-//    @Column(name = "email", nullable = false)
-    private String email;
+    @JsonProperty
+    private Long ID;
+    @JsonProperty
+    private String TIME_START;
+    @JsonProperty
+    private String CHANNEL;
+    @JsonProperty
+    private String DESC_;
+    @JsonProperty
+    private String SMS_STATUS;
+    @JsonProperty
+    private String SMS_DATE;
+    @JsonProperty
+    private String EMAIL_STATUS;
+    @JsonProperty
+    private String EMAIL_DATE;
+    @JsonProperty
+    private String TEL;
 }

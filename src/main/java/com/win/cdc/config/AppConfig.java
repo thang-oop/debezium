@@ -49,6 +49,7 @@ public class AppConfig {
                 .with("table.whitelist", "SVISTA.TBL_LOG_ERR")
                 .with("topic.prefix", "topic")
                 .with("database.out.server.name", "dbzxout")
+                .with("include.schema.changes", "false")
                 .build();
     }
 }

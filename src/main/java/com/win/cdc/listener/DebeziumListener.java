@@ -51,8 +51,7 @@ public class DebeziumListener {
             Operation operation = Operation.forCode((String) sourceRecordChangeValue.get(OPERATION));
 
             if(operation != Operation.READ) {
-                String record = operation == Operation.DELETE ? BEFORE : AFTER; // Handling Update & Insert operations.
-
+                String record = operation == Operation.DELETE ? BEFORE : AFTER;
                 Struct struct = (Struct) sourceRecordChangeValue.get(record);
                 Map<String, Object> payload = struct.schema().fields().stream()
                         .map(Field::name)
